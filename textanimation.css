@@ -1,0 +1,13 @@
+*{
+    margin: 0px;
+}
+.header{
+    width: 100%;
+    background: #111;
+    padding: 100px 0px;
+    text-align: center;
+}
+.header h1{
+    color: #eee;
+    font-family: "Raleway";
+}

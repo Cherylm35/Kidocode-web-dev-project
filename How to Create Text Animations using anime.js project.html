@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>How to Create Text Animations using anime.js</title>
+        <link rel="stylesheet" href="textanimation.css">
+    </head>
+    <body>
+        <div class="header">
+            <h1>Welcome</h1>
+        </div>
+        <script src="anime.min.js"></script>
+        <script>
+            let header = document.querySelector(".header h1");
+            header.innerHTML = header.innerText.split("").map(function(char){
+                if(char == " "){
+                    char = "&nbsp;";
+                }
+                return "<span>"+char+"</span>";
+            }).join("");
+
+            anime.timeline({loop:false})
+            .add({
+                targets:".header h1 span",
+                //translateY:["50px",0],
+                scale:[5,1],
+                duration: 4500,
+                opacity:[0,1],
+                delay:function(element,i){
+                    return i*50;
+                }
+            })
+        </script>
+    </body>
+</html>
